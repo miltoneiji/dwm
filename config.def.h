@@ -70,7 +70,7 @@ static const char *mutevol[] = { "pactl", "set-sink-mute",   "0", "toggle",  NUL
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 static const char *roficmd[]  = { "/home/takamura/bin/programs.sh", NULL };
 static const char *powercmd[]  = { "/home/takamura/bin/power.sh", NULL };
 
@@ -139,4 +139,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
