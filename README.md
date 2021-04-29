@@ -8,6 +8,12 @@ dwm is an extremely fast, small, and dynamic window manager for X.
 - https://dwm.suckless.org/patches/fullgaps/
 - https://dwm.suckless.org/patches/fullscreen/
 
+## To apply patches
+
+```
+patch < patch.diff
+```
+
 ## Requirements
 
 In order to build dwm you need the Xlib header files.
