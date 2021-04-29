@@ -2,6 +2,8 @@
 
 dwm is an extremely fast, small, and dynamic window manager for X.
 
+This repository is a fork of https://git.suckless.org/dwm/log.html
+
 ## Patches applied
 
 - https://dwm.suckless.org/patches/cool_autostart/
