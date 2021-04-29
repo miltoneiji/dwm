@@ -23,6 +23,10 @@ static const char *colors[][3]      = {
 
 static const char *const autostart[] = {
 	"redshift", NULL,
+	"nitrogen --restore", NULL,
+	"setxkbmap -layout us -variant alt-intl -option caps:escape", NULL,
+	"xset r rate 200 25", NULL,
+	"picom", NULL,
 	NULL /* terminate */
 };
 
