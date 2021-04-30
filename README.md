@@ -12,6 +12,8 @@ This repository is a fork of https://git.suckless.org/dwm/log.html
 - https://github.com/mihirlad55/dwm-anybar
 - https://github.com/mihirlad55/dwm-ipc (this should be the last)
 
+With those last patches, you can use: https://github.com/mihirlad55/polybar-dwm-module
+
 ## To apply patches
 
 ```
