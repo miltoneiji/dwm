@@ -21,13 +21,18 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
 
+/* autostart commands that will be killed when dwm is killed */
 static const char *const autostart[] = {
 	"redshift", NULL,
-	"nitrogen --restore", NULL,
-	"setxkbmap -layout us -variant alt-intl -option caps:escape", NULL,
-	"xset r rate 200 25", NULL,
 	"picom", NULL,
 	NULL /* terminate */
+};
+
+/* autostart commands */
+static const char *alwaysstart[] = {
+	"setxkbmap -layout us -variant alt-intl -option caps:escape &",
+	"xset r rate 200 25 &",
+	"nitrogen --restore &",
 };
 
 /* tagging */

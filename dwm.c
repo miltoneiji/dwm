@@ -344,6 +344,14 @@ applyrules(Client *c)
 	c->tags = c->tags & TAGMASK ? c->tags & TAGMASK : c->mon->tagset[c->mon->seltags];
 }
 
+static void
+always_start_exec()
+{
+	const char *const *p;
+	for(p = alwaysstart; *p; p++)
+		system(*p);
+}
+
 int
 applysizehints(Client *c, int *x, int *y, int *w, int *h, int interact)
 {
@@ -2228,6 +2236,7 @@ main(int argc, char *argv[])
 		die("pledge");
 #endif /* __OpenBSD__ */
 	scan();
+	always_start_exec();
 	run();
 	cleanup();
 	XCloseDisplay(dpy);
