@@ -56,6 +56,19 @@ like this in your .xinitrc:
     done &
     exec dwm
 
+## Running dwm with lightdm
+
+Create an entry in `/usr/share/xsessions/dwm.desktop`
+
+```
+[Desktop Entry]
+Name=dwm
+Comment=Dynamic window manager
+Exec=dwm
+Icon=dwm
+Type=XSession
+Keywords=tiling;wm;windowmanager;window;manager;
+```
 
 ## Configuration
 
