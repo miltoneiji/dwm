@@ -10,6 +10,7 @@ This repository is a fork of https://git.suckless.org/dwm/log.html
 - https://dwm.suckless.org/patches/fullgaps/
 - https://dwm.suckless.org/patches/fullscreen/
 - https://github.com/mihirlad55/dwm-anybar
+- https://github.com/mihirlad55/dwm-ipc (this should be the last)
 
 ## To apply patches
 
