@@ -85,6 +85,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *roficmd[]  = { "/home/takamura/bin/programs.sh", NULL };
 static const char *powercmd[]  = { "/home/takamura/bin/power.sh", NULL };
+static const char *printcmd[] = { "/home/takamura/bin/screenshot.sh", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -99,6 +100,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Pause,  spawn,          {.v = powercmd} },
 	{ MODKEY,                       XK_w,      zoom,           {0} },
+
+	/* print screen */
+	{ MODKEY,                       XK_Print,  spawn,          {.v = printcmd } },
 
 	/* sound control */
 	{ 0,                            XF86XK_AudioLowerVolume,   spawn, {.v = downvol } },
