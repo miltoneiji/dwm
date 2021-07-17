@@ -33,9 +33,10 @@ static const char *const autostart[] = {
 
 /* autostart commands */
 static const char *alwaysstart[] = {
-	"setxkbmap -layout us -variant alt-intl -option caps:escape &", // move it to xprofile
+	"setxkbmap -layout us -variant alt-intl &", // move it to xprofile
 	"xset r rate 200 25 &",
 	"nitrogen --restore &",
+	"echo 'DWM LOADED' | systemd-cat -p warning",
 };
 
 /* tagging */
