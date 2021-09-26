@@ -38,7 +38,7 @@ static const char *alwaysstart[] = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "1", "2", "3", "4" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -78,6 +78,7 @@ static const char *downvol[] = { "pactl", "set-sink-volume", "0", "-5%",     NUL
 static const char *mutevol[] = { "pactl", "set-sink-mute",   "0", "toggle",  NULL };
 
 /* commands */
+static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *termcmd[]  = { "kitty", NULL };
 static const char *dmenucmd[]  = { "/home/takamura/.scripts/programs", NULL };
 
