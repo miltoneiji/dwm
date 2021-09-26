@@ -26,14 +26,12 @@ static const char *colors[][3]      = {
 
 /* autostart commands that will be killed when dwm is killed */
 static const char *const autostart[] = {
-	"redshift", NULL,
-	"picom", NULL,
 	NULL /* terminate */
 };
 
 /* autostart commands */
 static const char *alwaysstart[] = {
-	"setxkbmap -layout us -variant alt-intl &", // move it to xprofile
+	"setxkbmap -layout us -variant alt-intl &",
 	"xset r rate 200 25 &",
 	"nitrogen --restore &",
 	"echo 'DWM LOADED' | systemd-cat -p warning",
@@ -48,7 +46,6 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
@@ -81,16 +78,12 @@ static const char *downvol[] = { "pactl", "set-sink-volume", "0", "-5%",     NUL
 static const char *mutevol[] = { "pactl", "set-sink-mute",   "0", "toggle",  NULL };
 
 /* commands */
-static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "kitty", NULL };
-static const char *roficmd[]  = { "/home/takamura/.scripts/programs", NULL };
-static const char *powercmd[]  = { "/home/takamura/.scripts/power", NULL };
-static const char *printcmd[] = { "/home/takamura/.scripts/screenshot", NULL };
+static const char *dmenucmd[]  = { "/home/takamura/.scripts/programs", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_d,      spawn,          {.v = roficmd } },
+	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_f,      fullscreen,     {0} },
@@ -99,11 +92,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_Pause,  spawn,          {.v = powercmd} },
 	{ MODKEY,                       XK_w,      zoom,           {0} },
-
-	/* print screen */
-	{ MODKEY,                       XK_Print,  spawn,          {.v = printcmd } },
 
 	/* sound control */
 	{ 0,                            XF86XK_AudioLowerVolume,   spawn, {.v = downvol } },
